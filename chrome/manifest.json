@@ -1,0 +1,23 @@
+{
+    "manifest_version":2,
+
+    "name": "AppBuilder Simulator Extension",
+    "version": "1.0",
+	
+    "description": "Extension to improve Telerik AppBuilder simulator experience. For now it enables CORS when debugging in simulator.",
+
+	"icons": {
+		"16": "icon16.png",
+		"48": "icon48.png",
+		"128": "icon128.png"
+	},
+
+    "permissions":["webRequest", "webRequestBlocking",
+        "http://*/*",
+        "https://*/*"
+    ],
+
+    "background":{
+        "scripts":["appbuilder-simulator-extension.js"]
+    }
+}
