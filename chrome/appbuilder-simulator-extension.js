@@ -1,4 +1,4 @@
-// Copyright 2013 Telerik. All Rights Reserved.
+// Copyright 2014 Telerik. All Rights Reserved.
 
 (function module() {
 
