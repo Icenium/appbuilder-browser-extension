@@ -1,10 +1,10 @@
 {
     "manifest_version":2,
 
-    "name": "Telerik AppBuilder Simulator Extension",
+    "name": "Telerik AppBuilder Simulator Companion",
     "version": "0.0.1",
 	
-    "description": "Extension to improve Telerik AppBuilder simulator experience. Enables CORS when debugging in simulator.",
+    "description": "This Chrome extension enables CORS for the device simulator of the Telerik AppBuilder in-browser client.",
 
 	"icons": {
 		"16": "icon16.png",
