@@ -3,7 +3,7 @@
 (function module() {
 	var consts,
 		requestQueue = {},
-		isAllowedOrigin = /(\.icenium\.com|\.telerik\.com)/;
+		isAllowedOriginRegEx = /(\.icenium\.com|\.telerik\.com)/;
 
 	consts = {
 		headers: {
@@ -50,7 +50,7 @@
 			headers = details.requestHeaders || [],
 			hOrigin = getHeaderByKey(headers, consts.headers.ORIGIN);
 
-			if (hOrigin && isAllowedOrigin.test(hOrigin.value)) {
+			if (hOrigin && isAllowedOriginRegEx.test(hOrigin.value)) {
 				requestQueue[requestId] = { origin: hOrigin.value };
 			}
 
