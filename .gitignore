@@ -1,2 +1,5 @@
 /*.suo
 /*.zip
+/*.DS_Store
+/chrome/*.DS_Store
+/Telerik AppBuilder Helper.safariextension/*.DS_Store

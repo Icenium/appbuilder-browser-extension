@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Telerik</string>
+	<key>Builder Version</key>
+	<string>9537.75.14</string>
+	<key>CFBundleDisplayName</key>
+	<string>Telerik AppBuilder Helper for Safari</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.telerik.appbuilderhelperforsafari</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.0.1</string>
+	<key>CFBundleVersion</key>
+	<string>0.0.1</string>
+	<key>Chrome</key>
+	<dict/>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>Start</key>
+			<array>
+				<string>appbuilder-simulator-extension.js</string>
+			</array>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>Enables CORS for the device simulator of the Telerik AppBuilder in-browser client.</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+	<key>Website</key>
+	<string>http://www.telerik.com/platform</string>
+</dict>
+</plist>
