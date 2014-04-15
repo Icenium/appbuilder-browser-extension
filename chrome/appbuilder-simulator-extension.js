@@ -62,7 +62,7 @@
 		onHeadersReceivedHandler,
 		{
 			urls: ["<all_urls>"],
-			types: ["xmlhttprequest"]
+			types: ["xmlhttprequest","image"]
 		},
 		["blocking","responseHeaders"]
 	);
