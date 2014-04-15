@@ -1,13 +1,11 @@
-Contribute to the Telerik AppBuilder Package for Sublime Text
+Contribute to the Telerik AppBuilder Helper for Chrome
 ===
 
-*Help us improve the Telerik AppBuilder Package for Sublime Text* 
+*Help us improve the Telerik AppBuilder Helper for Chrome* 
 
-[![Telerik AppBuilder](https://raw.githubusercontent.com/Icenium/appbuilder-sublime-package/master/ab-logo.png "Telerik AppBuilder")](http://www.telerik.com/appbuilder "The Telerik AppBuilder web site")
+[![Telerik AppBuilder](ab-logo.png "Telerik AppBuilder")](http://www.telerik.com/appbuilder "The Telerik AppBuilder web site")
 
-The Telerik AppBuilder package for Sublime Text 2 lets you run your hybrid mobile app on connected devices or in the device simulator, and synchronize your code changes to the running app without redeploying it. The package requires that the Telerik AppBuilder Command-Line Interface is installed on your system.
-
-> The Telerik AppBuilder Command-Line Interface is delivered for Windows and OS X as an npm package. For more information click <a href="https://www.npmjs.org/package/appbuilder" target="_blank">here</a>.
+The Telerik AppBuilder Helper for Chrome adds a number of improvements to the Telerik AppBuilder in-browser client. When you enable this extension for Google Chrome, you can benefit from the development and testing features listed [here](README.md#features "Features of the Telerik AppBuilder Helper").
 
 * [Report an Issue](#report-an-issue "Learn how to report a bug")
 * [Request a Feature](#request-a-feature "Learn how to submit a feature or improvement request")
@@ -15,79 +13,84 @@ The Telerik AppBuilder package for Sublime Text 2 lets you run your hybrid mobil
 
 Report an Issue
 ===
-If you find a bug in the source code or a mistake in the documentation, you can help us by submitting an issue to our <a href="https://github.com/Icenium/appbuilder-sublime-package">GitHub Repository</a>.
-Before you submit your issue search the archive, maybe your question was already answered.
-If your issue appears to be a bug, and hasn't been reported, open a new issue. Help us to maximize the effort we can spend fixing issues and adding new features, by not reporting duplicate issues. Providing the following information will increase the chances of your issue being dealt with quickly:
+If you find a bug in the source code or a mistake in the documentation, you can help us by submitting an issue to our <a href="https://github.com/Icenium/appbuilder-browser-extension">GitHub Repository</a>. Before you submit your issue, search the archive for identical questions. Help us maximize the effort we can spend bug fixing and adding new features by not reporting duplicate issues.
 
-* Overview of the issue - if an error is being thrown a stack trace helps
-* Motivation for or Use Case - explain why this is a bug for you
-* Telerik AppBuilder Version(s) - is it a regression?
-* Operating System - is this a problem with all operating systems?
-* Reproduce the error - provide an unambiguous set of steps.
-* Related issues - has a similar issue been reported before?
-* Suggest a Fix - if you can't fix the bug yourself, perhaps you can point to what might be causing the problem (line of code or commit)
+If your issue appears to be a bug and has not been reported, open a new issue. To help us investigate and resolve the issue more quickly, you can provide the following information.
+
+* **Overview of the issue:** Provide a short description of the visible symptoms. If applicable, include error messages, screen shots, and stack traces.
+* **Motivation for or use case:** Let us know how this particular issue affects your work.
+* **Telerik AppBuilder version(s):** List the current version number of the extension and the build number of the in-browser client (available in the Output pane at login). Let us know if you have not observed this behavior in earlier versions and if you consider it a regression.
+* **System configuration:** Provide us with relevant system configuration information such as operating system, network connection, proxy usage, etc. Let us know if you have been able to reproduce the issue on multiple setups.
+* **Steps to reproduce:** If applicable, submit a step-by-step walkthrough of how to reproduce the issue.
+* **Related issues:** If you discover a similar issue in our archive, give us a heads up - it might help us identify the culprit.
+* **Suggest a fix:** You are welcome to suggest a bug fix or pinpoint the line of code or the commit that you believe has introduced the issue.
 
 [Back to Top][1]
 
 Request a Feature
 ===
-You can request a new feature by submitting an issue with an *enhancement* label to our <a href="https://github.com/Icenium/appbuilder-sublime-package">GitHub Repository</a>.
-If you would like to implement a new feature then consider submitting it to the <a href="https://github.com/Icenium/appbuilder-sublime-package">GitHub Repository</a> as a Pull Request.
+
+You can request a new feature by submitting an issue with the *enhancement* label to our <a href="https://github.com/Icenium/appbuilder-browser-extension">GitHub Repository</a>.
+
+If you want to implement a new feature yourself, consider submitting it to the <a href="https://github.com/Icenium/appbuilder-browser-extension">GitHub Repository</a> as a Pull Request.
 
 [Back to Top][1]
 
 Contribute to the Code Base
 ===
-Before you submit your Pull Request consider the following guidelines:
 
-* Search <a href="https://github.com/Icenium/appbuilder-sublime-package/pulls">GitHub</a> for an open or closed Pull Request that relates to your submission. You don't want to duplicate effort.
-* Make your changes in a new git branch:
+Before you submit a Pull Request, consider the following guidelines.
+
+* Search <a href="https://github.com/Icenium/appbuilder-browser-extension/pulls">GitHub</a> for an open or closed Pull Request that relates to your submission.
+* Make your changes in a new `git` branch. We use the <a href="http://nvie.com/posts/a-successful-git-branching-model/">Gitflow branching model</a> so you will have to branch from our develop branch.
+```bash
+    git checkout -b my-fix-branch develop
 ```
-    git checkout -b my-fix-branch master
-```
-* Create your patch.
-* Commit your changes and create a descriptive commit message (the commit message is used to generate release notes):
-```
+* Create your patch and include appropriate test cases.
+* Commit your changes and create a descriptive commit message (the commit message is used to generate release notes).
+```bash
     git commit -a
 ```
 * Build your changes locally.
-```
+```bash
     grunt
 ```
-> This will create 'Telerik AppBuilder.zip' which you will have to extract in the Sublime Text packages directory and ensure that the package is working properly.
-
-* Push your branch to GitHub:
+* Ensure all the tests pass.
+```bash
+    grunt test
 ```
+* Push your branch to GitHub.
+```bash
     git push origin my-fix-branch
 ```
-* In GitHub, send a Pull Request to appbuilder-sublime-package:master.
-
-* If we suggest changes then you can modify your branch, rebase and force a new push to your GitHub repository to update the Pull Request:
-```
-    git rebase master -i
+* In GitHub, send a Pull Request to icenium-cli:develop.
+* If we suggest changes, you can modify your branch, rebase, and force a new push to your GitHub repository to update the Pull Request.
+```bash
+    git rebase develop -i
     git push -f
 ```
-* That's it! Thank you for your contribution!
 
-When the patch is reviewed and merged, you can safely delete your branch and pull the changes from the main (upstream) repository:
+That's it! Thank you for your contribution!
 
-* Delete the remote branch on GitHub:
-```
+When the patch is reviewed and merged, you can safely delete your branch and pull the changes from the main (upstream) repository.
+
+* Delete the remote branch on GitHub.
+```bash
     git push origin --delete my-fix-branch
 ```
-* Check out the master branch:
+* Check out the develop branch.
+```bash
+    git checkout develop -f
 ```
-    git checkout master -f
-```
-* Delete the local branch:
-```
+* Delete the local branch.
+```bash
     git branch -D my-fix-branch
 ```
-* Update your develop with the latest upstream version:
+* Update your develop branch with the latest upstream version.
 ```
-    git pull --ff upstream master
+    git pull --ff upstream develop
 ```
 
 [Back to Top][1]
 
-[1]: #contribute-to-the-telerik-appbuilder-package-for-sublime-text
+[1]: #contribute-to-the-telerik-appbuilder-helper-for-chrome
