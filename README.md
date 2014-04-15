@@ -11,7 +11,6 @@ The Telerik AppBuilder Helper for Google Chrome extends the Telerik AppBuilder i
 
 * [Installation](#installation "How to install the Telerik AppBuilder Helper for Chrome")
 * [Features](#features "What are the features of the Telerik AppBuilder Helper for Chrome")
-* [How It Works](#how-it-works "See the Telerik AppBuilder Helper for Chrome in action")
 * [How to Contribute](#contribution "How to contribute to the Telerik AppBuilder Helper for Chrome")
 * [More Telerik AppBuilder Tools and Resources](#more-telerik-appbuilder-tools-and-resources "Get the other Telerik AppBuilder clients and tools")
 * [License](#license "Licensing information about the Telerik AppBuilder CLI")
@@ -29,13 +28,6 @@ Features
 After you enable the Telerik AppBuilder Helper for Chrome, you can perform the following operations.
 
 * You can run Ajax Cross-Origin Resource Sharing (CORS) requests in the device simulator in the Telerik AppBuilder in-browser client.
-
-[Back to Top][1]
-
-How It Works
-===
-
---------> EMBEDDED YOUTUBE VIDEO <------------
 
 [Back to Top][1]
 
@@ -72,7 +64,3 @@ This software is licensed under the Apache 2.0 license, quoted <a href="LICENSE.
 [Back to Top][1]
 
 [1]: #telerik-appbuilder-helper-for-chrome
-
-<!--Prototype for extension to allow ajax CORS request in browser simulator
-
-[preview](http://screencast.com/t/p5d2D2Umcm)-->
