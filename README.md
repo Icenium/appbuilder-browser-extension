@@ -73,6 +73,6 @@ This software is licensed under the Apache 2.0 license, quoted <a href="LICENSE.
 
 [1]: #telerik-appbuilder-helper-for-chrome
 
-Prototype for extension to allow ajax CORS request in browser simulator
+<!--Prototype for extension to allow ajax CORS request in browser simulator
 
-[preview](http://screencast.com/t/p5d2D2Umcm)
+[preview](http://screencast.com/t/p5d2D2Umcm)-->
