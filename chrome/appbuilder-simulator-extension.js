@@ -2,6 +2,7 @@
 
 (function module() {
 	var consts,
+		ports = {},
 		requestQueue = {},
 		isAllowedOriginRegEx = /(\.icenium\.com|\.telerik\.com)/;
 
@@ -75,6 +76,77 @@
 		},
 		["requestHeaders"]
 	);
+
+	chrome.runtime.onConnectExternal.addListener(function (port) {
+		var sender = port.sender;
+
+		if (sender && sender.tab && sender.tab.url &&
+			sender.tab.url.indexOf("/appbuilder/webclient/simulator.html") >= 0) {
+			port.onMessage.addListener(function (request) {
+				if (request.command === "attachDebugger") {
+					attachExceptionHandler(port);
+				} else if (request.command === "detachDebugger") {
+					detachDebugger(sender.tab)
+				}
+			});
+			ports[sender.tab.id] = port;
+			port.onDisconnect.addListener(function (port) {
+				if (port.sender.tab &&
+					port.sender.tab.id &&
+					ports[port.sender.tab.id]) {
+					delete ports[port.sender.tab.id];
+				}
+			})
+		}
+	});
+
+	function attachExceptionHandler(port) {
+		tabTarget = port.sender.tab;
+
+		chrome.debugger.getTargets(function (targets) {
+			var tab = getDebuggerTab(targets, tabTarget);
+
+			if (!tab.attached) {
+				chrome.debugger.attach({ tabId: tab.tabId }, "1.1");
+			}
+			chrome.debugger.sendCommand({ tabId: tab.tabId }, "Debugger.enable");
+			chrome.debugger.sendCommand({ tabId: tab.tabId }, "Debugger.setPauseOnExceptions", { state: "uncaught" });
+		});
+	}
+
+	chrome.debugger.onEvent.addListener(function (source, method, params) {
+		if (method === "Debugger.paused" && ports[source.tabId]) {
+			chrome.debugger.sendCommand({ tabId: source.tabId }, "Debugger.resume");
+			if (params.reason === "exception") {
+				ports[source.tabId].postMessage({ message: "exceptionThrown", exception: JSON.stringify(params.data) });
+			}
+		}
+	});
+
+	chrome.debugger.onDetach.addListener(function (source) {
+		if (ports[source.tabId]) {
+			ports[source.tabId].postMessage({message:"detached"});
+		}
+	})
+
+	function detachDebugger(tabTarget) {
+		chrome.debugger.getTargets(function (targets) {
+			var tab = getDebuggerTab(targets, tabTarget)
+			if (tab.attached) {
+				chrome.debugger.detach({ tabId: tab.tabId });
+			}
+		});
+	}
+
+	function getDebuggerTab(targets, tabTarget) {
+		for (var i = 0, l = targets.length; i < l; i++) {
+			if (targets[i].tabId !== tabTarget.id) {
+				continue;
+			}
+
+			return targets[i];
+		}
+	}
 
 })(chrome);
 

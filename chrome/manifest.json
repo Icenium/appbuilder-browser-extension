@@ -12,11 +12,15 @@
 		"128": "icon128.png"
 	},
 
-    "permissions":["webRequest", "webRequestBlocking",
+    "permissions":["webRequest", "webRequestBlocking", "debugger",
         "*://*./*"
     ],
 
     "background":{
         "scripts":["appbuilder-simulator-extension.js"]
+    },
+
+    "externally_connectable": {
+        "matches": ["http://app.icenium.com/*"]
     }
 }
