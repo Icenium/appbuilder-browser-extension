@@ -3,7 +3,7 @@
 (function module() {
 	var consts,
 		requestQueue = {},
-		isAllowedOriginRegEx = /\.(contentanywhere|contentanywherecloud|telerik|icenium)\.\w{2,5}/;
+		isAllowedOriginRegEx = /(contentanywhere|contentanywherecloud|telerik|icenium)\.\w{2,5}/i;
 
 	consts = {
 		headers: {
