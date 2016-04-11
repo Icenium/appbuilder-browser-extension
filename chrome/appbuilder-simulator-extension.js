@@ -3,7 +3,7 @@
 (function module() {
 	var consts,
 		requestQueue = {},
-		isAllowedOriginRegEx = /(\.icenium\.com|\.telerik\.com)/;
+		isAllowedOriginRegEx = /\.(contentanywhere|contentanywherecloud|telerik|icenium)\.\w{2,5}/;
 
 	consts = {
 		headers: {
@@ -21,6 +21,7 @@
 				break;
 			}
 		}
+
 		return result;
 	}
 
@@ -36,12 +37,13 @@
 
 		hAllowOrigin = getHeaderByKey(headers, consts.headers.ALLOW_ORIGIN);
 		request = requestQueue[requestId];
+
 		if (!hAllowOrigin && request) {
-			hAllowOrigin = { name: consts.headers.ALLOW_ORIGIN, value: request.origin }
+			hAllowOrigin = { name: consts.headers.ALLOW_ORIGIN, value: request.origin };
 			headers.push(hAllowOrigin);
 			delete requestQueue[requestId];
 		}
-		
+
 		return { responseHeaders: headers };
 	}
 
