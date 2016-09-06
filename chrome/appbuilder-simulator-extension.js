@@ -16,7 +16,7 @@
 		var result;
 
 		for (var i = 0, l = headers.length; i < l; i++) {
-			if (headers[i].name === key) {
+			if (headers[i].name.toLowerCase() === key.toLowerCase()) {
 				result = headers[i];
 				break;
 			}
