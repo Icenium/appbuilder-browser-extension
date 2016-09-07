@@ -2,7 +2,7 @@
     "manifest_version":2,
 
     "name": "Telerik AppBuilder Helper for Chrome",
-    "version": "0.0.5",
+    "version": "0.0.6",
 
     "description": "This Chrome extension enables CORS for the device simulator of the Telerik AppBuilder in-browser client.",
 
